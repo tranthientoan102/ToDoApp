@@ -19,7 +19,7 @@ app.get("/", async (req, res) => {
 app.get("/tasks", async (req, res) => {
   try {
     const tasks = await fetchTasks();
-    res.send(tasks);
+    res.send(tasks.Items);
   } catch (error) {
     res.status(400).send(`Error fetching data: ${error}`);
   }

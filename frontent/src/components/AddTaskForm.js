@@ -6,8 +6,7 @@ import { Typography } from "@mui/material";
 import axios, { Axios } from "axios";
 import { API_URL } from "../utils";
 
-
-export const AddTaskForm = ({fetchTasks}) => {
+export const AddTaskForm = ({ fetchTasks }) => {
   const [task, settask] = useState("");
   const addNewTask = async () => {
     try {
@@ -15,15 +14,15 @@ export const AddTaskForm = ({fetchTasks}) => {
         name: task,
         isComplete: false,
       });
-      await fetchTasks()
-      settask("")
-    } catch (error) {
-      
-    }
+      await fetchTasks();
+      settask("");
+    } catch (error) {}
   };
   return (
     <div>
-      <Typography variant="h4" align="center" margin={2}>Add Task</Typography>
+      <Typography variant="h4" align="center" margin={2}>
+        Add Task
+      </Typography>
       <div className="addTaskForm">
         <TextField
           id="outlined-basic"

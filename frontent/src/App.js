@@ -17,20 +17,15 @@ const lightTheme = createTheme({
   },
 });
 
-const task = {
-  id: 1,
-  name: "Learn React",
-  completed: false,
-};
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const fetchTasks = async () => {
     try {
-      const data = async () => {
-        const { data } = await axios.get(API_URL);
-        setTasks(data);
-      };
+      console.log("fetching tasks");
+      const { data } = await axios.get(API_URL);
+      console.log(data);
+      setTasks(data);
     } catch (error) {
       console.log(error);
     }
@@ -42,12 +37,11 @@ function App() {
   return (
     <ThemeProvider theme={lightTheme}>
       <CssBaseline />
-      <h1>Hello World</h1>
 
       <AddTaskForm fetchTasks={fetchTasks} />
-      {tasks.map((task) => (
+      {/* {tasks.map((task) => (
         <Task key={task.id} task={task} fetchTasks={fetchTasks} />
-      ))}
+      ))} */}
     </ThemeProvider>
   );
 }
