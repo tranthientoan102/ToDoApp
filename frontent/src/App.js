@@ -28,7 +28,7 @@ function App() {
   const fetchTasks = async () => {
     try {
       const data = async () => {
-        const { data } = axios.get(API_URL);
+        const { data } = await axios.get(API_URL);
         setTasks(data);
       };
     } catch (error) {
@@ -48,7 +48,6 @@ function App() {
       {tasks.map((task) => (
         <Task key={task.id} task={task} fetchTasks={fetchTasks} />
       ))}
-      {/* <Task task={task} /> */}
     </ThemeProvider>
   );
 }
