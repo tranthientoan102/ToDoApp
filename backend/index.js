@@ -13,6 +13,10 @@ if (process.env.DEVELOPMENT) {
 }
 
 app.get("/", async (req, res) => {
+  res.send("Hello World!");
+});
+
+app.get("/tasks", async (req, res) => {
   try {
     const tasks = await fetchTasks();
     res.send(tasks);
