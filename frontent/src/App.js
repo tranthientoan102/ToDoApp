@@ -39,9 +39,9 @@ function App() {
       <CssBaseline />
 
       <AddTaskForm fetchTasks={fetchTasks} />
-      {/* {tasks.map((task) => (
+      {tasks.map((task) => (
         <Task key={task.id} task={task} fetchTasks={fetchTasks} />
-      ))} */}
+      ))}
     </ThemeProvider>
   );
 }
